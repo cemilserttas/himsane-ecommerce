@@ -2,7 +2,7 @@
                      📝 JOURNAL DES PROMPTS - PROJET HIMSANE
 ===============================================================================
 EXAMEN : IA & E-commerce
-ÉTUDIANTS : [Cemil SERTTAS] + [Nom Prénom 2]
+ÉTUDIANTS : [Cemil SERTTAS] + [Bedi Tieko]
 DEADLINE : 05/01/2025
 ===============================================================================
 
@@ -279,7 +279,23 @@ ITÉRATIONS : 1
 📌 PHASE 3 : INTÉGRATION & DESIGN
 ===============================================================================
 
-[EN COURS - Prochaine étape]
+--- PROMPT #15 : Tests Responsive Complets ---
+Date : 31/12/2024
+IA Utilisée : Claude (Anthropic) via Anti-Gravity
+Élément validé : Tests responsive sur Desktop, Tablette et Mobile
+
+PROMPT EXACT :
+"Effectue des tests responsive complets sur le site HIMSANE :
+1. Vérifie le layout Desktop (navigation visible, grille 3 colonnes)
+2. Vérifie le layout Tablette 768px (menu hamburger, grille 2 colonnes)
+3. Vérifie le layout Mobile 375px (colonne unique, menu mobile)
+4. Teste le menu mobile (ouverture/fermeture)
+5. Vérifie que les cartes produits s'empilent correctement"
+
+RÉSULTAT : Tous les tests passés avec succès
+ITÉRATIONS : 1
+
+[PHASE 3 - TERMINÉE]
 
 ===============================================================================
 📌 PHASE 4 : DOCUMENTATION & RENDU

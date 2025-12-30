@@ -2,55 +2,95 @@
 
 **Responsable :** Lead Developer
 **Outils :** Anti-Gravity (Code) + GitHub (Repo) + Netlify (Deploy).
+**Dernière mise à jour :** 31/12/2024
 
-## PHASE 1 : INITIALISATION DU PROJET
-1.  Cloner le repo GitHub dans Anti-Gravity. (déjà fait)
-2.  Créer la structure des dossiers :
-    ```text
-    / (root)
-    ├── index.html          (Page d'accueil)
-    ├── product.html        (Page détail produit)
-    ├── /assets
-    │   ├── /images         (Logos, photos produits)
-    │   └── /css            (Si custom CSS nécessaire hors Tailwind)
-    ├── /js
-    │   └── main.js         (Scripts: Slicer, Gestion panier simple)
-    ├── data.json           (Données produits simulées)
-    └── README.md
-    ```
+---
 
-## PHASE 2 : DÉVELOPPEMENT (AI ASSISTED)
-Utilisez l'IA d'Anti-Gravity pour générer le code bloc par bloc.
+## PHASE 1 : INITIALISATION DU PROJET ✅
 
-### 1. Setup HTML & Tailwind
-Demandez à l'IA : *"Génère un squelette HTML5 incluant le lien CDN de Tailwind CSS et FontAwesome pour les icônes."*
+- [x] Cloner le repo GitHub dans Anti-Gravity
+- [x] Créer la structure des dossiers :
 
-### 2. Composants Communs (Header/Footer)
-* Coder le Header (Logo + Nav).
-* Coder le Footer.
-* *Astuce :* Copiez ce code sur `index.html` et `product.html` (ou utilisez JS pour l'injecter dynamiquement si vous êtes à l'aise).
+```text
+/ (root)
+├── index.html          ✅ (Page d'accueil - 800 lignes)
+├── product.html        ✅ (Page détail produit - 755 lignes)
+├── apropos.html        ✅ (Page À propos)
+├── mentions-legales.html ✅ (Mentions légales)
+├── /assets
+│   ├── /images         ✅ (7 fichiers: logo, bannières, produits)
+│   └── /css            ✅ (Styles additionnels)
+├── /js
+│   └── main.js         ✅ (Scripts: Slider, Menu, Panier - 303 lignes)
+├── data.json           ✅ (Données produits - 3 produits complets)
+└── README.md           ✅ (Documentation projet)
+```
 
-### 3. Page d'Accueil (`index.html`)
-* Intégrer le **Slicer** (Carrousel). [cite_start]Demandez à l'IA : *"Code un carrousel d'images simple en HTML/Tailwind/JS vanilla automatique."*[cite: 39].
-* Créer une section "Produits Vedettes" (Grid layout).
+---
 
-### 4. Page Produit (`product.html`)
-* Layout : Image à gauche, Détails à droite (Desktop) / Colonne unique (Mobile).
-* [cite_start]Afficher : Titre, Prix, Description, Bouton "Ajouter au panier", Section Avis, Section Cross-selling[cite: 30].
+## PHASE 2 : DÉVELOPPEMENT (AI ASSISTED) ✅
 
-## PHASE 3 : GIT WORKFLOW (IMPORTANT)
-Ne jamais laisser le code uniquement sur Anti-Gravity. Sauvegardez souvent.
+### 1. Setup HTML & Tailwind ✅
+- [x] Squelette HTML5 avec CDN Tailwind CSS
+- [x] FontAwesome pour les icônes
+- [x] Google Fonts (Playfair Display + Inter)
+- [x] Configuration Tailwind (couleurs personnalisées)
 
-**Commandes Terminal :**
-```bash
-# 1. Vérifier les fichiers modifiés
-git status
+### 2. Composants Communs (Header/Footer) ✅
+- [x] Header avec logo et navigation
+- [x] Navigation responsive (desktop + mobile)
+- [x] Menu hamburger fonctionnel
+- [x] Footer complet avec liens sociaux
 
-# 2. Ajouter les fichiers
-git add .
+### 3. Page d'Accueil (`index.html`) ✅
+- [x] Slider/Carrousel automatique (3 bannières)
+- [x] Navigation par flèches et points
+- [x] Section "Produits Vedettes" (Grid 3 colonnes)
+- [x] Section réassurance (3 arguments luxe)
+- [x] Section "Notre Maison" (storytelling)
+- [x] Newsletter
+- [x] Animations et effets hover
 
-# 3. Enregistrer les modifications (Message clair !)
-git commit -m "Ajout du header et de la bannière"
+### 4. Page Produit (`product.html`) ✅
+- [x] Layout : Image gauche / Détails droite (Desktop)
+- [x] Layout : Colonne unique (Mobile)
+- [x] Titre, Prix, Description courte
+- [x] Sélection couleur et taille interactive
+- [x] Gestion quantité (+/-)
+- [x] Bouton "Ajouter au panier" avec feedback
+- [x] Accordéons (Description, Caractéristiques, Livraison)
+- [x] Section Avis clients (2 avis)
+- [x] Section Cross-selling ("Vous aimerez aussi")
+- [x] Breadcrumb navigation
 
-# 4. Envoyer sur GitHub
-git push origin main
+---
+
+## PHASE 3 : GIT WORKFLOW ✅
+
+- [x] `git status` - Vérification des fichiers modifiés
+- [x] `git add .` - Ajout des fichiers
+- [x] `git commit -m "Phase 2 et 3 terminées"` - Enregistrement
+- [x] `git push origin main` - Envoi sur GitHub
+
+**Dernier commit :** 31/12/2024 - "Phase 2 et 3 terminées : slider, responsive, tests complets"
+
+---
+
+## 📊 RÉCAPITULATIF
+
+| Phase | Statut | Progression |
+|-------|--------|-------------|
+| Phase 1 - Initialisation | ✅ Terminée | 100% |
+| Phase 2 - Développement | ✅ Terminée | 100% |
+| Phase 3 - Git Workflow | ✅ Terminée | 100% |
+
+**🎉 DEV ROADMAP COMPLÈTE !**
+
+---
+
+## 📝 PROCHAINES ÉTAPES (Phase 4 - Documentation & Rendu)
+
+- [ ] Screenshots du site final
+- [ ] Rapport PDF
+- [ ] Déploiement Netlify final
+- [ ] Envoi email avant 05/01/2025

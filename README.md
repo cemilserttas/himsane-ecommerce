@@ -6,7 +6,7 @@
 
 ## 🎓 Projet Examen IA & E-commerce
 
-**Étudiants :** Cemil SERTTAS & [Nom Partenaire]  
+**Étudiants :** Cemil SERTTAS & Bedi Tieko  
 **Deadline :** 05/01/2025  
 **Cours :** Formation IA - HEPL
 
@@ -164,7 +164,7 @@ Ce fichier contient pour chaque élément :
 | Rôle | Responsable |
 |------|-------------|
 | Développement (Profil A) | Cemil SERTTAS |
-| Marketing/Design (Profil B) | [Nom du partenaire] |
+| Marketing/Design (Profil B) | Bedi Tieko |
 
 ---
 
