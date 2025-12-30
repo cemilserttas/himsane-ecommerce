@@ -1,0 +1,204 @@
+===============================================================================
+                     📝 JOURNAL DES PROMPTS - PROJET HIMSANE
+===============================================================================
+EXAMEN : IA & E-commerce
+ÉTUDIANTS : [Cemil SERTTAS] + [Nom Prénom 2]
+DEADLINE : 05/01/2025
+===============================================================================
+
+📌 PHASE 1 : FONDATIONS & STRATÉGIE
+===============================================================================
+
+--- PROMPT #1 : Identité de Marque ---
+Date : 30/12/2024
+IA Utilisée : Claude (Anthropic) via Anti-Gravity
+Élément généré : Identité complète de la marque
+
+PROMPT EXACT :
+"Agis comme un Directeur Artistique d'une grande maison de couture (type LVMH 
+ou Kering). Je lance une marque de vêtements de luxe masculine en ligne appelée 
+HIMSANE. Propose-moi :
+1. Un concept de marque cohérent
+2. Une tagline prestigieuse (3-4 mots max)
+3. Le "Tone of Voice" idéal pour séduire une clientèle masculine exigeante
+4. Un persona client type
+5. Les 3 valeurs clés de la marque"
+
+RÉSULTAT RETENU :
+- Concept : Mode masculine contemporaine alliant élégance intemporelle et audace moderne
+- Slogan : "L'essence du style"
+- Tone of Voice : Sophistiqué, minimaliste, confiant
+- Persona : Alexandre, 32 ans, urbain actif, CSP+
+- Valeurs : Savoir-faire • Intemporalité • Allure
+
+ITÉRATIONS : 1
+
+--- PROMPT #2 : Charte Graphique ---
+Date : 30/12/2024
+IA Utilisée : Claude (Anthropic) via Anti-Gravity
+Élément généré : Palette de couleurs et typographie
+
+PROMPT EXACT :
+"Définis une charte graphique premium pour HIMSANE, marque de mode masculine 
+luxe. Propose :
+1. Une couleur primaire évoquant le luxe masculin
+2. Une couleur secondaire chaude et raffinée
+3. Une typographie pour les titres (élégante, impactante)
+4. Une typographie pour le corps de texte (moderne, lisible)"
+
+RÉSULTAT RETENU :
+- Primaire : #1A1A1A (Noir profond)
+- Secondaire : #C9A962 (Or champagne)
+- Accent : #2D2D2D (Anthracite)
+- Fond : #FAFAFA (Blanc cassé)
+- Typo Titres : Playfair Display
+- Typo Corps : Inter
+
+ITÉRATIONS : 1
+
+--- PROMPT #3 : Génération du Logo ---
+Date : 30/12/2024
+IA Utilisée : Image AI (Anti-Gravity / Google)
+Élément généré : Logo de la marque HIMSANE
+
+PROMPT EXACT :
+"Minimalist luxury fashion brand logo design for "HIMSANE" - sophisticated men's 
+fashion brand. Clean, elegant typography with the word HIMSANE in a refined serif 
+font. The design should be timeless, high-end, and suitable for a premium menswear 
+label. Black text on white background. Simple, iconic, no additional graphics or 
+symbols - just pure typography. Professional logo design, vector-style, crisp lines, 
+luxury fashion aesthetic similar to Armani or Hugo Boss branding style."
+
+RÉSULTAT : Logo typographique minimaliste généré avec succès
+FICHIER : assets/images/logo.png
+ITÉRATIONS : 1
+
+--- PROMPT #4 : Hero Banner (Bannière Accueil) ---
+Date : 30/12/2024
+IA Utilisée : Image AI (Anti-Gravity / Google)
+Élément généré : Image bannière principale page d'accueil
+
+PROMPT EXACT :
+"Luxury men's fashion hero banner image for e-commerce website. Elegant male model 
+in sophisticated dark blazer and crisp white shirt, standing confidently in a 
+minimalist high-end interior setting. Muted color palette with warm gold and 
+champagne tones accenting the dark clothing. Professional fashion photography, 
+cinematic lighting, depth of field. Premium menswear brand aesthetic, aspirational 
+lifestyle, modern luxury. No text overlay needed. Wide format banner suitable for 
+website header, 16:9 aspect ratio feel."
+
+RÉSULTAT : Bannière lifestyle luxe générée avec succès
+FICHIER : assets/images/hero-banner.png
+ITÉRATIONS : 1
+
+--- PROMPT #5 : Photo Produit - Le Blazer Signature ---
+Date : 30/12/2024
+IA Utilisée : Image AI (Anti-Gravity / Google)
+Élément généré : Photo produit du blazer
+
+PROMPT EXACT :
+"Premium men's black wool blazer product photography. The blazer is displayed 
+elegantly on a clean white/light gray studio background. Professional studio 
+lighting, 4K resolution, commercial product shot. The blazer shows refined 
+tailoring, quality fabric texture visible, sophisticated modern fit. High-end 
+menswear e-commerce product image style, similar to luxury brand product pages 
+like Hugo Boss or Armani. Focus on craftsmanship and quality details."
+
+RÉSULTAT : Photo produit professionnelle générée
+FICHIER : assets/images/blazer-signature.jpg
+ITÉRATIONS : 1
+
+--- PROMPT #6 : Photo Produit - Chemise Soie Ivresse ---
+Date : 30/12/2024
+IA Utilisée : Image AI (Anti-Gravity / Google)
+Élément généré : Photo produit de la chemise
+
+PROMPT EXACT :
+"Luxury men's white ivory silk dress shirt product photography. Elegant silk shirt 
+displayed on clean white/light gray studio background. Professional studio lighting 
+showing the lustrous quality of the silk fabric. 4K resolution, commercial product 
+shot for high-end e-commerce. Premium menswear aesthetic, visible mother-of-pearl 
+buttons, refined collar detail. Sophisticated and timeless, luxury brand product 
+image style."
+
+RÉSULTAT : Photo produit chemise soie générée
+FICHIER : assets/images/chemise-soie.jpg
+ITÉRATIONS : 1
+
+--- PROMPT #7 : Photo Produit - Le Trench Intemporel ---
+Date : 30/12/2024
+IA Utilisée : Image AI (Anti-Gravity / Google)
+Élément généré : Photo produit du trench coat
+
+PROMPT EXACT :
+"Classic beige trench coat product photography for luxury menswear. Premium gabardine 
+fabric, traditional double-breasted design with belt. Displayed on clean white/light 
+gray studio background. Professional studio lighting, 4K resolution, high-end 
+e-commerce product shot. Heritage British style, quality craftsmanship visible, 
+leather detailing. Sophisticated men's outerwear, similar to Burberry aesthetic. 
+Commercial product photography style."
+
+RÉSULTAT : Photo produit trench générée
+FICHIER : assets/images/trench-intemporel.jpg
+ITÉRATIONS : 1
+
+===============================================================================
+📌 PHASE 2 : PRODUCTION DE CONTENU & SQUELETTE
+===============================================================================
+
+--- PROMPT #8 : Code Structure HTML + Tailwind ---
+Date : 30/12/2024
+IA Utilisée : Claude (Anthropic) via Anti-Gravity
+Élément généré : Structure HTML complète avec Tailwind CSS
+
+PROMPT EXACT :
+"Génère un squelette HTML5 incluant le lien CDN de Tailwind CSS et FontAwesome 
+pour les icônes. Le site doit avoir :
+1. Un Header fixe avec logo, navigation et icônes panier/recherche
+2. Une section Hero avec slider/carrousel
+3. Une grille de produits vedettes (3 produits)
+4. Une section À propos / Storytelling
+5. Un Footer complet avec colonnes (Navigation, Service Client, Contact)
+Utilise la palette : Primaire #1A1A1A, Secondaire #C9A962, Fond #FAFAFA
+Typographies : Playfair Display (titres) + Inter (corps)"
+
+RÉSULTAT : index.html et product.html créés avec design luxe complet
+ITÉRATIONS : 1
+
+--- PROMPT #9 : Fiches Produits (Copywriting Luxe) ---
+Date : 30/12/2024
+IA Utilisée : Claude (Anthropic) via Anti-Gravity
+Élément généré : Descriptions produits et avis clients
+
+PROMPT EXACT :
+"Rédige 3 fiches produits pour une marque de mode masculine luxe HIMSANE. 
+Adopte un ton sophistiqué et minimaliste. Pour chaque produit, fournis :
+1. Un nom de produit iconique
+2. Une description courte (accroche)
+3. Une description longue (storytelling sensoriel)
+4. Caractéristiques techniques (Matière, Coupe, Origine, Entretien)
+5. Un prix premium
+6. 2 avis clients soignés axés sur la qualité
+
+Produits à décrire :
+- Un blazer en laine vierge Super 130's
+- Une chemise en pure soie naturelle
+- Un trench coat classique en gabardine"
+
+RÉSULTAT : 3 fiches produits complètes intégrées dans data.json
+ITÉRATIONS : 1
+
+[PHASE 2 - EN COURS]
+
+===============================================================================
+📌 PHASE 3 : INTÉGRATION & DESIGN
+===============================================================================
+
+[À COMPLÉTER]
+
+===============================================================================
+📌 PHASE 4 : DOCUMENTATION & RENDU
+===============================================================================
+
+[À COMPLÉTER]
+

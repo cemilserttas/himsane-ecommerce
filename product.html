@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Le Blazer Signature HIMSANE - L'alliance parfaite entre tradition tailleur et modernité. Laine Vierge Super 130's, confection italienne.">
+    <meta name="keywords" content="blazer homme, blazer laine, veste homme luxe, HIMSANE, mode masculine premium">
+
+    <title>Le Blazer Signature | HIMSANE - L'essence du style</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A1A1A',
+                        secondary: '#C9A962',
+                        accent: '#2D2D2D',
+                        cream: '#FAFAFA',
+                        gold: '#C9A962'
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+            color: #1A1A1A;
+        }
+
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Product image zoom */
+        .product-main-image {
+            overflow: hidden;
+        }
+
+        .product-main-image img {
+            transition: transform 0.5s ease;
+        }
+
+        .product-main-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Size button */
+        .size-btn {
+            transition: all 0.2s ease;
+        }
+
+        .size-btn:hover {
+            border-color: #1A1A1A;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Nav link hover */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #C9A962;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+        }
+
+        /* Reviews */
+        .review-card {
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gold underline */
+        .gold-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: #C9A962;
+        }
+
+        /* Product card hover */
+        .cross-sell-card {
+            transition: all 0.4s ease;
+        }
+
+        .cross-sell-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cross-sell-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .cross-sell-card img {
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header"
+        class="fixed w-full top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center" aria-label="Retour à l'accueil HIMSANE">
+                    <img src="assets/images/logo.png" alt="HIMSANE Logo" class="h-10 w-auto">
+                </a>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex items-center space-x-10" aria-label="Navigation principale">
+                    <a href="index.html"
+                        class="nav-link text-primary font-medium text-sm tracking-wide hover:text-secondary transition-colors">Accueil</a>
+                    <a href="index.html#produits"
+                        class="nav-link text-primary font-medium text-sm tracking-wide hover:text-secondary transition-colors">Collection</a>
+                    <a href="index.html#apropos"
+                        class="nav-link text-primary font-medium text-sm tracking-wide hover:text-secondary transition-colors">Notre
+                        Maison</a>
+                    <a href="index.html#contact"
+                        class="nav-link text-primary font-medium text-sm tracking-wide hover:text-secondary transition-colors">Contact</a>
+                </nav>
+
+                <!-- Icons -->
+                <div class="flex items-center space-x-6">
+                    <button aria-label="Rechercher" class="text-primary hover:text-secondary transition-colors">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button aria-label="Panier" class="relative text-primary hover:text-secondary transition-colors">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                        <span
+                            class="absolute -top-2 -right-2 w-5 h-5 bg-secondary text-white text-xs rounded-full flex items-center justify-center font-medium">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-primary hover:text-secondary transition-colors"
+                        aria-label="Ouvrir le menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-cream shadow-2xl z-50 p-8">
+            <button id="close-menu-btn"
+                class="absolute top-6 right-6 text-primary hover:text-secondary transition-colors"
+                aria-label="Fermer le menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
+            <div class="mt-16 space-y-6">
+                <a href="index.html"
+                    class="block text-primary font-heading text-2xl hover:text-secondary transition-colors">Accueil</a>
+                <a href="index.html#produits"
+                    class="block text-primary font-heading text-2xl hover:text-secondary transition-colors">Collection</a>
+                <a href="index.html#apropos"
+                    class="block text-primary font-heading text-2xl hover:text-secondary transition-colors">Notre
+                    Maison</a>
+                <a href="index.html#contact"
+                    class="block text-primary font-heading text-2xl hover:text-secondary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== BREADCRUMB ========== -->
+    <nav class="pt-24 pb-4 bg-cream" aria-label="Fil d'Ariane">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ol class="flex items-center text-sm text-gray-500">
+                <li><a href="index.html" class="hover:text-secondary transition-colors">Accueil</a></li>
+                <li class="mx-2">/</li>
+                <li><a href="index.html#produits" class="hover:text-secondary transition-colors">Collection</a></li>
+                <li class="mx-2">/</li>
+                <li><a href="#" class="hover:text-secondary transition-colors">Vestes</a></li>
+                <li class="mx-2">/</li>
+                <li class="text-primary font-medium">Le Blazer Signature</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- ========== PRODUCT SECTION ========== -->
+    <section class="py-8 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+                <!-- Product Images -->
+                <div class="space-y-4">
+                    <!-- Main Image -->
+                    <div class="product-main-image relative aspect-[3/4] bg-white overflow-hidden">
+                        <img id="main-product-image" src="assets/images/blazer-signature.jpg"
+                            alt="Le Blazer Signature - Vue principale" class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-4 left-4 bg-primary text-white px-4 py-1 text-xs font-medium uppercase tracking-wider">
+                            Bestseller
+                        </span>
+                    </div>
+
+                    <!-- Thumbnails -->
+                    <div class="grid grid-cols-4 gap-3">
+                        <button class="product-thumbnail aspect-square bg-white overflow-hidden ring-2 ring-secondary"
+                            data-image="assets/images/blazer-signature.jpg">
+                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 1"
+                                class="w-full h-full object-cover">
+                        </button>
+                        <button
+                            class="product-thumbnail aspect-square bg-white overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                            data-image="assets/images/blazer-signature.jpg">
+                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 2"
+                                class="w-full h-full object-cover">
+                        </button>
+                        <button
+                            class="product-thumbnail aspect-square bg-white overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                            data-image="assets/images/blazer-signature.jpg">
+                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 3"
+                                class="w-full h-full object-cover">
+                        </button>
+                        <button
+                            class="product-thumbnail aspect-square bg-white overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                            data-image="assets/images/blazer-signature.jpg">
+                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 4"
+                                class="w-full h-full object-cover">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Details -->
+                <div class="lg:py-8">
+
+                    <!-- Category & Title -->
+                    <p class="text-secondary font-medium tracking-[0.2em] text-xs uppercase mb-3">Vestes</p>
+                    <h1 class="font-heading text-4xl sm:text-5xl text-primary font-medium mb-4">Le Blazer Signature</h1>
+
+                    <!-- Rating -->
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="flex items-center text-secondary">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm ml-1"></i>
+                            <i class="fa-solid fa-star text-sm ml-1"></i>
+                            <i class="fa-solid fa-star text-sm ml-1"></i>
+                            <i class="fa-solid fa-star text-sm ml-1"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">(2 avis vérifiés)</span>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="mb-8">
+                        <span class="text-3xl font-medium text-primary">495 €</span>
+                    </div>
+
+                    <!-- Short Description -->
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        L'alliance parfaite entre tradition tailleur et modernité. Confectionné dans un atelier italien
+                        de renom,
+                        ce blazer incarne l'essence même du raffinement masculin.
+                    </p>
+
+                    <!-- Color Selection -->
+                    <div class="mb-8">
+                        <p class="text-sm font-medium text-primary mb-3">Couleur : <span
+                                class="font-normal text-gray-500">Noir Intense</span></p>
+                        <div class="flex space-x-3">
+                            <button
+                                class="color-btn w-10 h-10 rounded-full bg-[#1A1A1A] ring-2 ring-offset-2 ring-secondary"
+                                aria-label="Noir Intense"></button>
+                            <button
+                                class="color-btn w-10 h-10 rounded-full bg-[#1B2838] hover:ring-2 hover:ring-offset-2 hover:ring-gray-300 transition-all"
+                                aria-label="Bleu Nuit"></button>
+                        </div>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="mb-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="text-sm font-medium text-primary">Taille</p>
+                            <a href="#" class="text-secondary text-sm hover:underline">Guide des tailles</a>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <button
+                                class="size-btn w-14 h-12 border border-gray-300 text-primary text-sm font-medium hover:border-primary transition-colors">46</button>
+                            <button
+                                class="size-btn w-14 h-12 border border-gray-300 text-primary text-sm font-medium hover:border-primary transition-colors">48</button>
+                            <button
+                                class="size-btn w-14 h-12 border border-primary bg-primary text-white text-sm font-medium">50</button>
+                            <button
+                                class="size-btn w-14 h-12 border border-gray-300 text-primary text-sm font-medium hover:border-primary transition-colors">52</button>
+                            <button
+                                class="size-btn w-14 h-12 border border-gray-300 text-primary text-sm font-medium hover:border-primary transition-colors">54</button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Add to Cart -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <!-- Quantity -->
+                        <div class="flex items-center border border-gray-300">
+                            <button id="decrease-qty"
+                                class="w-12 h-14 flex items-center justify-center text-primary hover:bg-gray-100 transition-colors">
+                                <i class="fa-solid fa-minus text-sm"></i>
+                            </button>
+                            <input id="quantity" type="number" value="1" min="1" max="10"
+                                class="w-16 h-14 text-center border-x border-gray-300 text-primary font-medium focus:outline-none">
+                            <button id="increase-qty"
+                                class="w-12 h-14 flex items-center justify-center text-primary hover:bg-gray-100 transition-colors">
+                                <i class="fa-solid fa-plus text-sm"></i>
+                            </button>
+                        </div>
+
+                        <!-- Add to Cart -->
+                        <button id="add-to-cart"
+                            class="flex-1 bg-primary hover:bg-accent text-white font-medium py-4 px-8 text-sm tracking-wide uppercase transition-all">
+                            <i class="fa-solid fa-bag-shopping mr-2"></i>
+                            Ajouter au panier
+                        </button>
+                    </div>
+
+                    <!-- Wishlist -->
+                    <button
+                        class="flex items-center text-gray-500 hover:text-secondary transition-colors text-sm mb-10">
+                        <i class="fa-regular fa-heart mr-2"></i>
+                        Ajouter à ma liste de souhaits
+                    </button>
+
+                    <!-- Accordions -->
+                    <div class="border-t border-gray-200">
+
+                        <!-- Description -->
+                        <div class="accordion border-b border-gray-200">
+                            <button class="accordion-trigger w-full py-5 flex items-center justify-between text-left"
+                                onclick="toggleAccordion(this)">
+                                <span class="font-medium text-primary">Description</span>
+                                <i class="fa-solid fa-plus text-sm text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content active pb-5">
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Confectionné dans un atelier italien de renom, Le Blazer Signature incarne l'essence
+                                    même du raffinement masculin.
+                                    Sa coupe semi-ajustée épouse naturellement la silhouette, créant une allure à la
+                                    fois décontractée et impeccablement structurée.
+                                    Le tissu en laine vierge Super 130's offre un tombé exceptionnel et une résistance
+                                    remarquable aux saisons qui passent.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Characteristics -->
+                        <div class="accordion border-b border-gray-200">
+                            <button class="accordion-trigger w-full py-5 flex items-center justify-between text-left"
+                                onclick="toggleAccordion(this)">
+                                <span class="font-medium text-primary">Caractéristiques</span>
+                                <i class="fa-solid fa-plus text-sm text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content pb-5">
+                                <ul class="space-y-3 text-sm">
+                                    <li class="flex">
+                                        <span class="text-gray-500 w-32">Composition</span>
+                                        <span class="text-primary">100% Laine Vierge Super 130's</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="text-gray-500 w-32">Coupe</span>
+                                        <span class="text-primary">Semi-ajustée, épaules naturelles</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="text-gray-500 w-32">Origine</span>
+                                        <span class="text-primary">Confection italienne</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="text-gray-500 w-32">Entretien</span>
+                                        <span class="text-primary">Nettoyage à sec recommandé</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Shipping -->
+                        <div class="accordion border-b border-gray-200">
+                            <button class="accordion-trigger w-full py-5 flex items-center justify-between text-left"
+                                onclick="toggleAccordion(this)">
+                                <span class="font-medium text-primary">Livraison & Retours</span>
+                                <i class="fa-solid fa-plus text-sm text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content pb-5">
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-truck text-secondary mt-1 mr-3"></i>
+                                        <span>Livraison offerte dès 150€ d'achat</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-rotate-left text-secondary mt-1 mr-3"></i>
+                                        <span>Retours gratuits sous 30 jours</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-gift text-secondary mt-1 mr-3"></i>
+                                        <span>Emballage cadeau disponible</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REVIEWS ========== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl sm:text-4xl text-primary font-medium gold-underline">
+                    Avis Clients
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+                <!-- Review 1 -->
+                <div class="review-card bg-cream p-8 rounded-sm">
+                    <div class="flex items-center text-secondary mb-4">
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+                        "Un tombé exceptionnel. Je recherchais cette pièce depuis des années - une coupe parfaite qui ne
+                        nécessite aucune retouche.
+                        La qualité de la laine est remarquable au toucher."
+                    </p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-medium">
+                            ML
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-primary font-medium text-sm">Marc L.</p>
+                            <p class="text-gray-400 text-xs">Achat vérifié • 15 nov. 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card bg-cream p-8 rounded-sm">
+                    <div class="flex items-center text-secondary mb-4">
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                        <i class="fa-solid fa-star text-sm ml-1"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+                        "L'investissement en vaut la peine. Ce blazer a transformé l'ensemble de ma garde-robe.
+                        Élégant en toute circonstance, du bureau au dîner en ville."
+                    </p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-primary font-medium">
+                            TD
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-primary font-medium text-sm">Thomas D.</p>
+                            <p class="text-gray-400 text-xs">Achat vérifié • 28 oct. 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== CROSS-SELLING ========== -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-12">
+                <p class="text-secondary font-medium tracking-[0.3em] text-xs uppercase mb-3">Compléter le look</p>
+                <h2 class="font-heading text-3xl sm:text-4xl text-primary font-medium">
+                    Vous aimerez aussi
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Cross-sell 1 -->
+                <a href="product.html?id=2" class="cross-sell-card bg-white overflow-hidden">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="assets/images/chemise-soie.jpg" alt="Chemise Soie Ivresse"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-secondary text-xs font-medium tracking-wider uppercase mb-2">Chemises</p>
+                        <h3 class="font-heading text-lg text-primary font-medium mb-2">Chemise Soie Ivresse</h3>
+                        <span class="text-primary font-medium">285 €</span>
+                    </div>
+                </a>
+
+                <!-- Cross-sell 2 -->
+                <a href="product.html?id=3" class="cross-sell-card bg-white overflow-hidden">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="assets/images/trench-intemporel.jpg" alt="Le Trench Intemporel"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-secondary text-xs font-medium tracking-wider uppercase mb-2">Manteaux</p>
+                        <h3 class="font-heading text-lg text-primary font-medium mb-2">Le Trench Intemporel</h3>
+                        <div>
+                            <span class="text-gray-400 line-through text-sm mr-2">895 €</span>
+                            <span class="text-primary font-medium">695 €</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cross-sell 3 (repeated for demo) -->
+                <a href="product.html?id=1" class="cross-sell-card bg-white overflow-hidden hidden lg:block">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="assets/images/blazer-signature.jpg" alt="Le Blazer Signature"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <p class="text-secondary text-xs font-medium tracking-wider uppercase mb-2">Vestes</p>
+                        <h3 class="font-heading text-lg text-primary font-medium mb-2">Le Blazer Signature</h3>
+                        <span class="text-primary font-medium">495 €</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="contact" class="bg-primary text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <img src="assets/images/logo.png" alt="HIMSANE"
+                        class="h-10 w-auto mb-6 invert brightness-0 contrast-200">
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">
+                        HIMSANE incarne l'élégance masculine contemporaine. Des pièces intemporelles pour l'homme
+                        moderne.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-secondary hover:text-secondary transition-colors"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-secondary hover:text-secondary transition-colors"
+                            aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-secondary hover:text-secondary transition-colors"
+                            aria-label="Pinterest">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-heading text-lg mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Accueil</a></li>
+                        <li><a href="index.html#produits"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Collection</a></li>
+                        <li><a href="index.html#apropos"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Notre Maison</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Lookbook</a></li>
+                    </ul>
+                </div>
+
+                <!-- Aide -->
+                <div>
+                    <h4 class="font-heading text-lg mb-6">Service Client</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Guide des
+                                tailles</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Livraison &
+                                Retours</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">FAQ</a>
+                        </li>
+                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Entretien
+                                des pièces</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-heading text-lg mb-6">Contact</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope w-5"></i>
+                            <a href="mailto:contact@himsane.com"
+                                class="hover:text-secondary transition-colors">contact@himsane.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone w-5"></i>
+                            <span>+32 4 123 45 67</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot w-5 mt-1"></i>
+                            <span>Liège, Belgique</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-white/40 text-xs">
+                <p>© 2024 HIMSANE. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-secondary transition-colors">Mentions légales</a>
+                    <a href="#" class="hover:text-secondary transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="hover:text-secondary transition-colors">CGV</a>
+                </div>
+                <p class="mt-4 md:mt-0">
+                    Réalisé par <span class="text-secondary">Cemil SERTTAS</span> & [Nom Partenaire]
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="js/main.js"></script>
+    <script>
+        // Accordion toggle
+        function toggleAccordion(button) {
+            const accordion = button.parentElement;
+            const content = accordion.querySelector('.accordion-content');
+            const icon = button.querySelector('i');
+
+            content.classList.toggle('active');
+
+            if (content.classList.contains('active')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+
+        // Initialize first accordion as open
+        document.addEventListener('DOMContentLoaded', function () {
+            const firstAccordion = document.querySelector('.accordion-content');
+            if (firstAccordion) {
+                firstAccordion.classList.add('active');
+                const icon = firstAccordion.previousElementSibling.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

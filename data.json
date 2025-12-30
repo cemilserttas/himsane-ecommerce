@@ -1,0 +1,226 @@
+{
+    "brand": {
+        "name": "HIMSANE",
+        "tagline": "L'essence du style",
+        "description": "Mode masculine contemporaine alliant élégance intemporelle et audace moderne",
+        "values": [
+            "Savoir-faire",
+            "Intemporalité",
+            "Allure"
+        ],
+        "colors": {
+            "primary": "#1A1A1A",
+            "secondary": "#C9A962",
+            "accent": "#2D2D2D",
+            "background": "#FAFAFA",
+            "text": "#1A1A1A",
+            "textLight": "#6B7280"
+        },
+        "fonts": {
+            "heading": "Playfair Display",
+            "body": "Inter"
+        }
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Le Blazer Signature",
+            "slug": "blazer-signature",
+            "category": "Vestes",
+            "price": 495,
+            "originalPrice": null,
+            "image": "assets/images/blazer-signature.jpg",
+            "images": [
+                "assets/images/blazer-signature.jpg",
+                "assets/images/blazer-signature-2.jpg"
+            ],
+            "shortDescription": "L'alliance parfaite entre tradition tailleur et modernité.",
+            "longDescription": "Confectionné dans un atelier italien de renom, Le Blazer Signature incarne l'essence même du raffinement masculin. Sa coupe semi-ajustée épouse naturellement la silhouette, créant une allure à la fois décontractée et impeccablement structurée. Le tissu en laine vierge Super 130's offre un tombé exceptionnel et une résistance remarquable aux saisons qui passent.",
+            "characteristics": {
+                "composition": "100% Laine Vierge Super 130's",
+                "coupe": "Semi-ajustée, épaules naturelles",
+                "origine": "Confection italienne",
+                "entretien": "Nettoyage à sec recommandé"
+            },
+            "sizes": [
+                "46",
+                "48",
+                "50",
+                "52",
+                "54"
+            ],
+            "colors": [
+                {
+                    "name": "Noir Intense",
+                    "hex": "#1A1A1A"
+                },
+                {
+                    "name": "Bleu Nuit",
+                    "hex": "#1B2838"
+                }
+            ],
+            "reviews": [
+                {
+                    "author": "Marc L.",
+                    "rating": 5,
+                    "date": "2024-11-15",
+                    "comment": "Un tombé exceptionnel. Je recherchais cette pièce depuis des années - une coupe parfaite qui ne nécessite aucune retouche. La qualité de la laine est remarquable au toucher."
+                },
+                {
+                    "author": "Thomas D.",
+                    "rating": 5,
+                    "date": "2024-10-28",
+                    "comment": "L'investissement en vaut la peine. Ce blazer a transformé l'ensemble de ma garde-robe. Élégant en toute circonstance, du bureau au dîner en ville."
+                }
+            ],
+            "featured": true,
+            "badge": "Bestseller"
+        },
+        {
+            "id": 2,
+            "name": "Chemise Soie Ivresse",
+            "slug": "chemise-soie-ivresse",
+            "category": "Chemises",
+            "price": 285,
+            "originalPrice": null,
+            "image": "assets/images/chemise-soie.jpg",
+            "images": [
+                "assets/images/chemise-soie.jpg",
+                "assets/images/chemise-soie-2.jpg"
+            ],
+            "shortDescription": "La quintessence de l'élégance en pure soie naturelle.",
+            "longDescription": "Tissée à partir des plus fines fibres de soie naturelle, la Chemise Soie Ivresse caresse la peau avec une douceur incomparable. Sa coupe classique revisitée offre une liberté de mouvement totale tout en dessinant une silhouette impeccable. Les boutons en nacre véritable ajoutent une touche de préciosité discrète.",
+            "characteristics": {
+                "composition": "100% Soie Naturelle",
+                "coupe": "Classique ajustée",
+                "origine": "Tissage français",
+                "entretien": "Lavage délicat 30°C"
+            },
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "colors": [
+                {
+                    "name": "Blanc Ivoire",
+                    "hex": "#FFFFF0"
+                },
+                {
+                    "name": "Noir Absolu",
+                    "hex": "#0A0A0A"
+                }
+            ],
+            "reviews": [
+                {
+                    "author": "Jean-Pierre M.",
+                    "rating": 5,
+                    "date": "2024-12-01",
+                    "comment": "Une sensation unique sur la peau. Cette chemise est devenue indispensable pour mes événements importants. La qualité de la soie est incomparable."
+                },
+                {
+                    "author": "Alexandre R.",
+                    "rating": 5,
+                    "date": "2024-11-20",
+                    "comment": "Le raffinement dans les moindres détails. Les boutons en nacre, les coutures invisibles... Chaque élément témoigne d'un savoir-faire d'exception."
+                }
+            ],
+            "featured": true,
+            "badge": "Nouveauté"
+        },
+        {
+            "id": 3,
+            "name": "Le Trench Intemporel",
+            "slug": "trench-intemporel",
+            "category": "Manteaux",
+            "price": 695,
+            "originalPrice": 895,
+            "image": "assets/images/trench-intemporel.jpg",
+            "images": [
+                "assets/images/trench-intemporel.jpg",
+                "assets/images/trench-intemporel-2.jpg"
+            ],
+            "shortDescription": "L'icône du vestiaire masculin, réinterprétée avec audace.",
+            "longDescription": "Héritier d'une tradition centenaire, Le Trench Intemporel transcende les modes passagères. Taillé dans un gabardine imperméable de la plus haute qualité, il protège des intempéries avec une élégance souveraine. Sa doublure en coton égyptien assure un confort optimal en toute saison, tandis que les détails en cuir grainé soulignent son caractère exclusif.",
+            "characteristics": {
+                "composition": "Extérieur: Gabardine 100% Coton / Doublure: Coton Égyptien",
+                "coupe": "Regular fit, longueur mi-cuisse",
+                "origine": "Façonné en Angleterre",
+                "entretien": "Nettoyage à sec uniquement"
+            },
+            "sizes": [
+                "46",
+                "48",
+                "50",
+                "52",
+                "54",
+                "56"
+            ],
+            "colors": [
+                {
+                    "name": "Beige Heritage",
+                    "hex": "#C4B39A"
+                },
+                {
+                    "name": "Noir Classique",
+                    "hex": "#1A1A1A"
+                }
+            ],
+            "reviews": [
+                {
+                    "author": "François B.",
+                    "rating": 5,
+                    "date": "2024-10-05",
+                    "comment": "Un classique réinventé avec justesse. La coupe est parfaite et le gabardine d'une qualité rare. Ce trench traversera les décennies."
+                },
+                {
+                    "author": "Laurent V.",
+                    "rating": 5,
+                    "date": "2024-09-18",
+                    "comment": "À ce niveau de prix, je m'attendais à l'excellence. HIMSANE a dépassé mes attentes. Chaque détail est pensé, des boutons jusqu'aux coutures intérieures."
+                }
+            ],
+            "featured": true,
+            "badge": "-22%"
+        }
+    ],
+    "collections": [
+        {
+            "id": "winter-2024",
+            "name": "Collection Hiver 2024",
+            "description": "Les Essentiels de la Saison",
+            "image": "assets/images/collection-hiver.jpg"
+        }
+    ],
+    "reassurance": [
+        {
+            "icon": "fa-gem",
+            "title": "Matières Nobles",
+            "description": "Sélection rigoureuse des plus belles étoffes"
+        },
+        {
+            "icon": "fa-scissors",
+            "title": "Confection Artisanale",
+            "description": "Façonné par des maîtres-tailleurs européens"
+        },
+        {
+            "icon": "fa-gift",
+            "title": "Packaging Exclusif",
+            "description": "Écrin luxueux pour chaque pièce"
+        }
+    ],
+    "footer": {
+        "about": "HIMSANE incarne l'élégance masculine contemporaine. Fondée sur les principes du savoir-faire artisanal et de l'intemporalité, notre maison sélectionne les plus belles matières pour créer des pièces destinées à traverser le temps.",
+        "contact": {
+            "email": "contact@himsane.com",
+            "phone": "+32 4 123 45 67"
+        },
+        "social": {
+            "instagram": "#",
+            "facebook": "#",
+            "pinterest": "#"
+        }
+    }
+}
