@@ -226,6 +226,35 @@
         .reassurance-icon {
             transition: all 0.3s ease;
         }
+
+        /* Animation pour l'indicateur Défiler */
+        @keyframes scrollBounce {
+            0%, 100% {
+                transform: translateY(0) rotate(90deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(8px) rotate(90deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scrollLineMove {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .scroll-indicator-text {
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator-line {
+            animation: scrollLineMove 1.5s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -418,10 +447,11 @@
 
             <!-- Scroll Indicator -->
             <div class="absolute bottom-8 right-8 hidden md:flex flex-col items-center text-white/70">
-                <span class="text-xs tracking-widest uppercase mb-2 rotate-90 origin-center">Défiler</span>
+                <span class="scroll-indicator-text text-xs tracking-widest uppercase mb-2 origin-center text-secondary font-medium">Défiler</span>
                 <div class="w-px h-16 bg-white/30 relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1/2 bg-secondary animate-pulse"></div>
+                    <div class="scroll-indicator-line absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-secondary to-transparent"></div>
                 </div>
+                <i class="fa-solid fa-chevron-down text-secondary text-xs mt-2 animate-bounce"></i>
             </div>
         </div>
     </section>
