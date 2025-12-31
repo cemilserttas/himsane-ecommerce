@@ -704,9 +704,7 @@
         <div class="absolute inset-0">
             <video id="hero-video" class="w-full h-full object-cover" autoplay muted loop playsinline
                 poster="assets/images/video-poster.jpg">
-                <!-- Placeholder pour la vidéo VEO3 - Remplacez par votre vidéo générée -->
-                <source src="assets/videos/himsane-cinematic.mp4" type="video/mp4">
-                <!-- Image de fallback -->
+                <source src="assets/videos/video-poster.mp4" type="video/mp4">
             </video>
             <!-- Overlay gradient -->
             <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent"></div>
@@ -725,15 +723,16 @@
                 Plongez dans l'univers HIMSANE, où chaque mouvement révèle la perfection de nos créations.
             </p>
 
-            <!-- Play Button -->
+            <!-- Sound Toggle Button -->
             <button id="play-video-btn"
-                class="group relative w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-secondary hover:border-secondary transition-all duration-300 flex items-center justify-center">
-                <i class="fa-solid fa-play text-white text-xl ml-1 group-hover:scale-110 transition-transform"></i>
+                class="group relative w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-secondary hover:border-secondary transition-all duration-300 flex items-center justify-center"
+                aria-label="Activer/Désactiver le son">
+                <i id="sound-icon" class="fa-solid fa-volume-xmark text-white text-xl group-hover:scale-110 transition-transform"></i>
                 <span class="absolute inset-0 rounded-full border border-white/20 animate-ping"></span>
             </button>
 
             <!-- Video controls hint -->
-            <p class="text-white/40 text-xs mt-4 tracking-wider uppercase">Cliquez pour activer le son</p>
+            <p id="sound-hint" class="text-white/40 text-xs mt-4 tracking-wider uppercase">Cliquez pour activer le son</p>
         </div>
 
         <!-- Decorative elements -->
@@ -882,21 +881,36 @@
         document.addEventListener('DOMContentLoaded', () => {
             HimsaneCart.init();
 
-            // Video controls
+            // Video sound controls
             const heroVideo = document.getElementById('hero-video');
             const playBtn = document.getElementById('play-video-btn');
+            const soundIcon = document.getElementById('sound-icon');
+            const soundHint = document.getElementById('sound-hint');
 
-            if (heroVideo && playBtn) {
+            if (heroVideo && playBtn && soundIcon && soundHint) {
+                // Par défaut, la vidéo est en autoplay muted
                 let isMuted = true;
 
                 playBtn.addEventListener('click', () => {
                     if (isMuted) {
+                        // Activer le son
                         heroVideo.muted = false;
-                        playBtn.innerHTML = '<i class="fa-solid fa-volume-high text-white text-xl group-hover:scale-110 transition-transform"></i>';
+                        soundIcon.classList.remove('fa-volume-xmark');
+                        soundIcon.classList.add('fa-volume-high');
+                        soundHint.textContent = 'Cliquez pour couper le son';
+                        // Retirer l'animation ping quand le son est activé
+                        playBtn.querySelector('.animate-ping')?.remove();
                         isMuted = false;
                     } else {
+                        // Couper le son
                         heroVideo.muted = true;
-                        playBtn.innerHTML = '<i class="fa-solid fa-play text-white text-xl ml-1 group-hover:scale-110 transition-transform"></i><span class="absolute inset-0 rounded-full border border-white/20 animate-ping"></span>';
+                        soundIcon.classList.remove('fa-volume-high');
+                        soundIcon.classList.add('fa-volume-xmark');
+                        soundHint.textContent = 'Cliquez pour activer le son';
+                        // Remettre l'animation ping
+                        const pingSpan = document.createElement('span');
+                        pingSpan.className = 'absolute inset-0 rounded-full border border-white/20 animate-ping';
+                        playBtn.appendChild(pingSpan);
                         isMuted = true;
                     }
                 });
