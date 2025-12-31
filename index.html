@@ -482,8 +482,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Product 1: Blazer -->
-                <article class="product-card bg-white rounded-sm overflow-hidden shadow-sm cursor-pointer group">
-                    <a href="product.html?id=1" class="block">
+                <article class="product-card bg-white rounded-sm overflow-hidden shadow-sm group">
+                    <a href="product-blazer.html" class="block">
                         <div class="relative overflow-hidden aspect-[3/4]">
                             <img src="assets/images/blazer-signature.jpg"
                                 alt="Le Blazer Signature - Laine Vierge Super 130's"
@@ -507,21 +507,21 @@
                                 tailleur et modernité.</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-primary font-medium text-lg">495 €</span>
-                                <div class="flex items-center text-secondary">
-                                    <i class="fa-solid fa-star text-xs"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                </div>
+                                <button
+                                    class="quick-add-to-cart w-10 h-10 rounded-full bg-gray-100 hover:bg-secondary hover:text-white flex items-center justify-center transition-colors"
+                                    data-product-id="blazer-signature" data-product-name="Le Blazer Signature"
+                                    data-price="495" data-image="assets/images/blazer-signature.jpg"
+                                    onclick="event.preventDefault(); event.stopPropagation();">
+                                    <i class="fa-solid fa-plus text-sm"></i>
+                                </button>
                             </div>
                         </div>
                     </a>
                 </article>
 
                 <!-- Product 2: Chemise -->
-                <article class="product-card bg-white rounded-sm overflow-hidden shadow-sm cursor-pointer group">
-                    <a href="product.html?id=2" class="block">
+                <article class="product-card bg-white rounded-sm overflow-hidden shadow-sm group">
+                    <a href="product-chemise.html" class="block">
                         <div class="relative overflow-hidden aspect-[3/4]">
                             <img src="assets/images/chemise-soie.jpg" alt="Chemise Soie Ivresse - Pure Soie Naturelle"
                                 class="product-image w-full h-full object-cover">
@@ -543,21 +543,21 @@
                                 soie naturelle.</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-primary font-medium text-lg">285 €</span>
-                                <div class="flex items-center text-secondary">
-                                    <i class="fa-solid fa-star text-xs"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                </div>
+                                <button
+                                    class="quick-add-to-cart w-10 h-10 rounded-full bg-gray-100 hover:bg-secondary hover:text-white flex items-center justify-center transition-colors"
+                                    data-product-id="chemise-soie" data-product-name="Chemise Soie Ivresse"
+                                    data-price="285" data-image="assets/images/chemise-soie.jpg"
+                                    onclick="event.preventDefault(); event.stopPropagation();">
+                                    <i class="fa-solid fa-plus text-sm"></i>
+                                </button>
                             </div>
                         </div>
                     </a>
                 </article>
 
                 <!-- Product 3: Trench -->
-                <article class="product-card bg-white rounded-sm overflow-hidden shadow-sm cursor-pointer group">
-                    <a href="product.html?id=3" class="block">
+                <article class="product-card bg-white rounded-sm overflow-hidden shadow-sm group">
+                    <a href="product-trench.html" class="block">
                         <div class="relative overflow-hidden aspect-[3/4]">
                             <img src="assets/images/trench-intemporel.jpg"
                                 alt="Le Trench Intemporel - Gabardine Premium"
@@ -583,13 +583,13 @@
                                     <span class="text-gray-400 line-through text-sm mr-2">895 €</span>
                                     <span class="text-primary font-medium text-lg">695 €</span>
                                 </div>
-                                <div class="flex items-center text-secondary">
-                                    <i class="fa-solid fa-star text-xs"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                    <i class="fa-solid fa-star text-xs ml-0.5"></i>
-                                </div>
+                                <button
+                                    class="quick-add-to-cart w-10 h-10 rounded-full bg-gray-100 hover:bg-secondary hover:text-white flex items-center justify-center transition-colors"
+                                    data-product-id="trench-intemporel" data-product-name="Le Trench Intemporel"
+                                    data-price="695" data-image="assets/images/trench-intemporel.jpg"
+                                    onclick="event.preventDefault(); event.stopPropagation();">
+                                    <i class="fa-solid fa-plus text-sm"></i>
+                                </button>
                             </div>
                         </div>
                     </a>

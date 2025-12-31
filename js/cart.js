@@ -66,8 +66,12 @@ const HimsaneCart = {
         const cart = this.getCart();
         const item = cart.find(item => item.id === id && item.size === size && item.color === color);
         if (item) {
-            item.quantity = Math.max(1, Math.min(10, quantity));
-            this.saveCart(cart);
+            if (quantity <= 0) {
+                this.removeItem(id, size, color);
+            } else {
+                item.quantity = Math.min(10, quantity);
+                this.saveCart(cart);
+            }
         }
     },
 
@@ -102,8 +106,11 @@ const HimsaneCart = {
             badge.textContent = count;
             if (count > 0) {
                 badge.classList.remove('hidden');
-                badge.classList.add('animate-bounce');
-                setTimeout(() => badge.classList.remove('animate-bounce'), 500);
+                // Animation bounce
+                badge.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    badge.style.transform = 'scale(1)';
+                }, 200);
             }
         });
     },
@@ -117,7 +124,7 @@ const HimsaneCart = {
         // Créer le toast
         const toast = document.createElement('div');
         toast.id = 'cart-toast';
-        toast.className = `fixed top-24 right-4 z-50 px-6 py-4 rounded-lg shadow-2xl transform translate-x-full transition-transform duration-300 flex items-center space-x-3 ${type === 'success' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
+        toast.className = `fixed top-24 right-4 z-[9999] px-6 py-4 rounded-lg shadow-2xl transform translate-x-full transition-transform duration-300 flex items-center space-x-3 ${type === 'success' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
             }`;
         toast.innerHTML = `
             <i class="fa-solid ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} text-xl"></i>
@@ -148,7 +155,7 @@ const HimsaneCart = {
 
         const drawer = document.createElement('div');
         drawer.id = 'cart-drawer';
-        drawer.className = 'fixed inset-0 z-50 hidden';
+        drawer.className = 'fixed inset-0 z-[9999] hidden';
         drawer.innerHTML = `
             <!-- Overlay -->
             <div id="cart-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity"></div>
@@ -321,7 +328,7 @@ const HimsaneCart = {
 
         const modal = document.createElement('div');
         modal.id = 'search-modal';
-        modal.className = 'fixed inset-0 z-50 hidden';
+        modal.className = 'fixed inset-0 z-[9999] hidden';
         modal.innerHTML = `
             <!-- Overlay -->
             <div id="search-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -342,12 +349,15 @@ const HimsaneCart = {
                             <i class="fa-solid fa-magnifying-glass text-xl"></i>
                         </button>
                     </div>
+                    <div id="search-results" class="mt-4 hidden">
+                        <!-- Dynamic search results -->
+                    </div>
                     <div class="mt-8">
                         <p class="text-sm text-gray-500 mb-4">Suggestions populaires :</p>
                         <div class="flex flex-wrap gap-3">
-                            <a href="product.html" class="px-4 py-2 bg-gray-100 hover:bg-secondary hover:text-primary rounded-full text-sm transition-colors">Blazer Signature</a>
-                            <a href="product.html" class="px-4 py-2 bg-gray-100 hover:bg-secondary hover:text-primary rounded-full text-sm transition-colors">Chemise Premium</a>
-                            <a href="product.html" class="px-4 py-2 bg-gray-100 hover:bg-secondary hover:text-primary rounded-full text-sm transition-colors">Trench Élégant</a>
+                            <a href="product-blazer.html" class="px-4 py-2 bg-gray-100 hover:bg-secondary hover:text-primary rounded-full text-sm transition-colors">Blazer Signature</a>
+                            <a href="product-chemise.html" class="px-4 py-2 bg-gray-100 hover:bg-secondary hover:text-primary rounded-full text-sm transition-colors">Chemise Soie</a>
+                            <a href="product-trench.html" class="px-4 py-2 bg-gray-100 hover:bg-secondary hover:text-primary rounded-full text-sm transition-colors">Trench Intemporel</a>
                             <a href="apropos.html" class="px-4 py-2 bg-gray-100 hover:bg-secondary hover:text-primary rounded-full text-sm transition-colors">Notre Histoire</a>
                         </div>
                     </div>
@@ -360,12 +370,62 @@ const HimsaneCart = {
         document.getElementById('close-search').addEventListener('click', () => this.closeSearchModal());
         document.getElementById('search-overlay').addEventListener('click', () => this.closeSearchModal());
 
+        // Live search with results
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+
+        const products = [
+            { name: 'Le Blazer Signature', category: 'Vestes', price: '495 €', url: 'product-blazer.html', image: 'assets/images/blazer-signature.jpg' },
+            { name: 'Chemise Soie Ivresse', category: 'Chemises', price: '285 €', url: 'product-chemise.html', image: 'assets/images/chemise-soie.jpg' },
+            { name: 'Le Trench Intemporel', category: 'Manteaux', price: '695 €', url: 'product-trench.html', image: 'assets/images/trench-intemporel.jpg' }
+        ];
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length < 2) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+
+            const matches = products.filter(p =>
+                p.name.toLowerCase().includes(query) ||
+                p.category.toLowerCase().includes(query)
+            );
+
+            if (matches.length > 0) {
+                searchResults.classList.remove('hidden');
+                searchResults.innerHTML = `
+                    <p class="text-sm text-gray-500 mb-3">${matches.length} résultat(s)</p>
+                    <div class="space-y-3">
+                        ${matches.map(p => `
+                            <a href="${p.url}" class="flex items-center space-x-4 p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                <img src="${p.image}" alt="${p.name}" class="w-16 h-20 object-cover rounded">
+                                <div>
+                                    <p class="text-xs text-secondary uppercase">${p.category}</p>
+                                    <p class="font-medium text-primary">${p.name}</p>
+                                    <p class="text-gray-600">${p.price}</p>
+                                </div>
+                            </a>
+                        `).join('')}
+                    </div>
+                `;
+            } else {
+                searchResults.classList.remove('hidden');
+                searchResults.innerHTML = `<p class="text-gray-500">Aucun résultat pour "${query}"</p>`;
+            }
+        });
+
         // Handle search submit
-        document.getElementById('search-input').addEventListener('keydown', (e) => {
+        searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const query = e.target.value.toLowerCase();
-                if (query.includes('blazer') || query.includes('veste') || query.includes('chemise') || query.includes('trench')) {
-                    window.location.href = 'product.html';
+                if (query.includes('blazer') || query.includes('veste')) {
+                    window.location.href = 'product-blazer.html';
+                } else if (query.includes('chemise') || query.includes('soie')) {
+                    window.location.href = 'product-chemise.html';
+                } else if (query.includes('trench') || query.includes('manteau')) {
+                    window.location.href = 'product-trench.html';
                 } else if (query.includes('histoire') || query.includes('maison') || query.includes('apropos')) {
                     window.location.href = 'apropos.html';
                 } else {
@@ -402,17 +462,34 @@ const HimsaneCart = {
     },
 
     // ==========================================
+    // QUICK ADD TO CART (from product cards)
+    // ==========================================
+    quickAddToCart(productId, productName, price, image) {
+        const product = {
+            id: productId,
+            name: productName,
+            price: price,
+            image: image,
+            size: '50', // Default size
+            color: 'Noir', // Default color
+            quantity: 1
+        };
+        this.addItem(product);
+    },
+
+    // ==========================================
     // INITIALIZATION
     // ==========================================
 
     init() {
-        // Mettre à jour les badges au chargement
+        // Mettre à jour les badges au chargement IMMÉDIATEMENT
         this.updateCartUI();
 
         // Attacher les événements aux icônes panier
         document.querySelectorAll('[aria-label="Panier"], .cart-icon').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 this.openDrawer();
             });
         });
@@ -421,13 +498,32 @@ const HimsaneCart = {
         document.querySelectorAll('[aria-label="Rechercher"], .search-icon').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 this.openSearchModal();
             });
         });
 
-        console.log('🛒 HIMSANE Cart System initialized');
+        // Quick add to cart buttons
+        document.querySelectorAll('.quick-add-to-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const productId = btn.dataset.productId;
+                const productName = btn.dataset.productName;
+                const price = parseInt(btn.dataset.price);
+                const image = btn.dataset.image;
+                this.quickAddToCart(productId, productName, price, image);
+            });
+        });
+
+        console.log('🛒 HIMSANE Cart System initialized - Items in cart:', this.getItemCount());
     }
 };
+
+// Auto-initialize on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    HimsaneCart.init();
+});
 
 // Export pour utilisation globale
 window.HimsaneCart = HimsaneCart;
