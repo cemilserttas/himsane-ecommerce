@@ -263,7 +263,7 @@
                     <button aria-label="Panier" class="relative text-primary hover:text-secondary transition-colors">
                         <i class="fa-solid fa-bag-shopping text-lg"></i>
                         <span
-                            class="absolute -top-2 -right-2 w-5 h-5 bg-secondary text-white text-xs rounded-full flex items-center justify-center font-medium">0</span>
+                            class="cart-badge absolute -top-2 -right-2 w-5 h-5 bg-secondary text-white text-xs rounded-full flex items-center justify-center font-medium">0</span>
                     </button>
 
                     <!-- Mobile Menu Button -->
@@ -742,13 +742,17 @@
                 <div>
                     <h4 class="font-heading text-lg mb-6">Service Client</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Guide des
+                        <li><a href="guide-tailles.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Guide des
                                 tailles</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Livraison &
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Livraison &
                                 Retours</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">FAQ</a>
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">FAQ</a>
                         </li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Entretien
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Entretien
                                 des pièces</a></li>
                     </ul>
                 </div>
@@ -771,6 +775,13 @@
                             <span>Liège, Belgique</span>
                         </li>
                     </ul>
+                    <!-- Payment Methods -->
+                    <div class="flex items-center space-x-3 mt-6">
+                        <i class="fa-brands fa-cc-visa text-xl text-white/40"></i>
+                        <i class="fa-brands fa-cc-mastercard text-xl text-white/40"></i>
+                        <i class="fa-brands fa-cc-paypal text-xl text-white/40"></i>
+                        <i class="fa-brands fa-cc-apple-pay text-xl text-white/40"></i>
+                    </div>
                 </div>
 
             </div>
@@ -793,7 +804,13 @@
     </footer>
 
     <!-- ========== JAVASCRIPT ========== -->
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            HimsaneCart.init();
+        });
+    </script>
 
 </body>
 

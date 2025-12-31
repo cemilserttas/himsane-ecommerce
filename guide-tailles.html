@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Guide des tailles HIMSANE - Trouvez la coupe parfaite pour vos vêtements premium.">
+
+    <title>Guide des Tailles | HIMSANE</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A1A1A',
+                        secondary: '#C9A962',
+                        accent: '#2D2D2D',
+                        cream: '#FAFAFA',
+                        gold: '#C9A962'
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+            color: #1A1A1A;
+        }
+
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #C9A962;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="fixed w-full top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center">
+                    <img src="assets/images/logo.png" alt="HIMSANE Logo" class="h-10 w-auto">
+                </a>
+                <nav class="hidden md:flex items-center space-x-10">
+                    <a href="index.html"
+                        class="nav-link relative text-primary font-medium text-sm hover:text-secondary transition-colors">Accueil</a>
+                    <a href="index.html#produits"
+                        class="nav-link relative text-primary font-medium text-sm hover:text-secondary transition-colors">Collection</a>
+                    <a href="apropos.html"
+                        class="nav-link relative text-primary font-medium text-sm hover:text-secondary transition-colors">Notre
+                        Maison</a>
+                    <a href="index.html#contact"
+                        class="nav-link relative text-primary font-medium text-sm hover:text-secondary transition-colors">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-6">
+                    <button aria-label="Rechercher" class="text-primary hover:text-secondary transition-colors">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button aria-label="Panier" class="relative text-primary hover:text-secondary transition-colors">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                        <span
+                            class="cart-badge absolute -top-2 -right-2 w-5 h-5 bg-secondary text-white text-xs rounded-full flex items-center justify-center font-medium">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="pt-32 pb-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Breadcrumb -->
+            <nav class="mb-8">
+                <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                    <li><a href="index.html" class="hover:text-secondary transition-colors">Accueil</a></li>
+                    <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+                    <li class="text-primary font-medium">Guide des Tailles</li>
+                </ol>
+            </nav>
+
+            <!-- Page Title -->
+            <div class="text-center mb-16">
+                <h1 class="font-heading text-4xl md:text-5xl text-primary mb-4">Guide des Tailles</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto">Trouvez la coupe parfaite grâce à notre guide de mesures
+                    détaillé. En cas de doute, optez pour la taille supérieure.</p>
+            </div>
+
+            <!-- How to Measure -->
+            <section class="bg-white rounded-2xl shadow-sm p-8 md:p-12 mb-12">
+                <h2 class="font-heading text-2xl text-primary mb-8 text-center">Comment prendre vos mesures</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-ruler text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="font-medium text-primary mb-2">Tour de Poitrine</h3>
+                        <p class="text-gray-600 text-sm">Mesurez horizontalement autour de la partie la plus large de
+                            votre poitrine, sous les aisselles.</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-tape text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="font-medium text-primary mb-2">Tour de Taille</h3>
+                        <p class="text-gray-600 text-sm">Mesurez autour de votre taille naturelle, à l'endroit le plus
+                            étroit de votre buste.</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-arrows-left-right text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="font-medium text-primary mb-2">Largeur Épaules</h3>
+                        <p class="text-gray-600 text-sm">Mesurez d'une extrémité de l'épaule à l'autre, en passant par
+                            le haut du dos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Size Tables -->
+            <section class="space-y-12">
+
+                <!-- Blazers & Vestes -->
+                <div class="bg-white rounded-2xl shadow-sm p-8 overflow-hidden">
+                    <h2 class="font-heading text-2xl text-primary mb-6 flex items-center">
+                        <i class="fa-solid fa-user-tie text-secondary mr-3"></i>
+                        Blazers & Vestes
+                    </h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th class="px-6 py-4 text-left font-medium">Taille HIMSANE</th>
+                                    <th class="px-6 py-4 text-center font-medium">EU</th>
+                                    <th class="px-6 py-4 text-center font-medium">Tour de Poitrine</th>
+                                    <th class="px-6 py-4 text-center font-medium">Tour de Taille</th>
+                                    <th class="px-6 py-4 text-center font-medium">Épaules</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">46</td>
+                                    <td class="px-6 py-4 text-center">S</td>
+                                    <td class="px-6 py-4 text-center">92-96 cm</td>
+                                    <td class="px-6 py-4 text-center">78-82 cm</td>
+                                    <td class="px-6 py-4 text-center">43 cm</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 bg-secondary/5">
+                                    <td class="px-6 py-4 font-medium text-secondary">48</td>
+                                    <td class="px-6 py-4 text-center">M</td>
+                                    <td class="px-6 py-4 text-center">96-100 cm</td>
+                                    <td class="px-6 py-4 text-center">82-86 cm</td>
+                                    <td class="px-6 py-4 text-center">44.5 cm</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">50</td>
+                                    <td class="px-6 py-4 text-center">L</td>
+                                    <td class="px-6 py-4 text-center">100-104 cm</td>
+                                    <td class="px-6 py-4 text-center">86-90 cm</td>
+                                    <td class="px-6 py-4 text-center">46 cm</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">52</td>
+                                    <td class="px-6 py-4 text-center">XL</td>
+                                    <td class="px-6 py-4 text-center">104-108 cm</td>
+                                    <td class="px-6 py-4 text-center">90-94 cm</td>
+                                    <td class="px-6 py-4 text-center">47.5 cm</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">54</td>
+                                    <td class="px-6 py-4 text-center">XXL</td>
+                                    <td class="px-6 py-4 text-center">108-112 cm</td>
+                                    <td class="px-6 py-4 text-center">94-98 cm</td>
+                                    <td class="px-6 py-4 text-center">49 cm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Chemises -->
+                <div class="bg-white rounded-2xl shadow-sm p-8 overflow-hidden">
+                    <h2 class="font-heading text-2xl text-primary mb-6 flex items-center">
+                        <i class="fa-solid fa-shirt text-secondary mr-3"></i>
+                        Chemises
+                    </h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th class="px-6 py-4 text-left font-medium">Taille</th>
+                                    <th class="px-6 py-4 text-center font-medium">Tour de Cou</th>
+                                    <th class="px-6 py-4 text-center font-medium">Tour de Poitrine</th>
+                                    <th class="px-6 py-4 text-center font-medium">Longueur Manche</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">S (38)</td>
+                                    <td class="px-6 py-4 text-center">38 cm</td>
+                                    <td class="px-6 py-4 text-center">96 cm</td>
+                                    <td class="px-6 py-4 text-center">63 cm</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">M (40)</td>
+                                    <td class="px-6 py-4 text-center">40 cm</td>
+                                    <td class="px-6 py-4 text-center">102 cm</td>
+                                    <td class="px-6 py-4 text-center">64 cm</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">L (42)</td>
+                                    <td class="px-6 py-4 text-center">42 cm</td>
+                                    <td class="px-6 py-4 text-center">108 cm</td>
+                                    <td class="px-6 py-4 text-center">65 cm</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium">XL (44)</td>
+                                    <td class="px-6 py-4 text-center">44 cm</td>
+                                    <td class="px-6 py-4 text-center">114 cm</td>
+                                    <td class="px-6 py-4 text-center">66 cm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Tips -->
+            <section class="mt-12 bg-secondary/10 rounded-2xl p-8 md:p-12">
+                <h2 class="font-heading text-2xl text-primary mb-6">Conseils pour bien choisir</h2>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-secondary mr-3 mt-1"></i>
+                        <span><strong>En cas de doute</strong>, optez pour la taille supérieure. Nos retouches sont
+                            toujours possibles.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-secondary mr-3 mt-1"></i>
+                        <span><strong>Prenez vos mesures le matin</strong>, lorsque votre corps est au repos.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-secondary mr-3 mt-1"></i>
+                        <span><strong>Utilisez un mètre ruban souple</strong> et ne serrez pas trop.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-secondary mr-3 mt-1"></i>
+                        <span><strong>Faites-vous aider</strong> pour les mesures du dos et des épaules.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Contact CTA -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Besoin d'aide pour choisir votre taille ?</p>
+                <a href="mailto:contact@himsane.com"
+                    class="inline-flex items-center text-secondary hover:underline font-medium">
+                    <i class="fa-solid fa-envelope mr-2"></i>
+                    Contactez notre service client
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary text-white pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+                <div>
+                    <img src="assets/images/logo.png" alt="HIMSANE"
+                        class="h-10 w-auto mb-6 invert brightness-0 contrast-200">
+                    <p class="text-white/60 text-sm">L'essence du style masculin.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li><a href="index.html" class="hover:text-secondary">Accueil</a></li>
+                        <li><a href="index.html#produits" class="hover:text-secondary">Collection</a></li>
+                        <li><a href="apropos.html" class="hover:text-secondary">Notre Maison</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-6">Service Client</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li><a href="faq.html" class="hover:text-secondary">FAQ</a></li>
+                        <li><a href="guide-tailles.html" class="text-secondary">Guide des tailles</a></li>
+                        <li><a href="mentions-legales.html" class="hover:text-secondary">Mentions légales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-6">Contact</h4>
+                    <ul class="space-y-3 text-white/60 text-sm">
+                        <li><a href="mailto:contact@himsane.com">contact@himsane.com</a></li>
+                        <li>+32 4 123 45 67</li>
+                        <li>Liège, Belgique</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-white/40 text-xs">
+                <p>© 2024 HIMSANE. Réalisé par <span class="text-secondary">Cemil SERTTAS</span> & Bedi Tieko</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            HimsaneCart.init();
+        });
+    </script>
+
+</body>
+
+</html>

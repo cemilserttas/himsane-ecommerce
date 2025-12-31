@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finalisez votre commande HIMSANE - Paiement sécurisé pour vos vêtements premium.">
+
+    <title>Commande | HIMSANE</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A1A1A',
+                        secondary: '#C9A962',
+                        accent: '#2D2D2D',
+                        cream: '#FAFAFA',
+                        gold: '#C9A962'
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+            color: #1A1A1A;
+        }
+
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #C9A962;
+            box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.1);
+        }
+
+        .step-active {
+            color: #C9A962;
+            border-color: #C9A962;
+        }
+
+        .step-completed {
+            background-color: #C9A962;
+            color: #1A1A1A;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========== HEADER MINIMAL ========== -->
+    <header class="bg-cream border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center" aria-label="Retour à l'accueil">
+                    <img src="assets/images/logo.png" alt="HIMSANE Logo" class="h-10 w-auto">
+                </a>
+
+                <!-- Security Badge -->
+                <div class="flex items-center text-gray-500 text-sm">
+                    <i class="fa-solid fa-lock mr-2 text-green-600"></i>
+                    <span>Paiement sécurisé</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== PROGRESS STEPS ========== -->
+    <div class="bg-white border-b border-gray-100 py-6">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center justify-center space-x-4 md:space-x-8">
+                <!-- Step 1 -->
+                <div class="flex items-center">
+                    <span
+                        class="step-completed w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                    <span class="ml-2 text-sm font-medium hidden sm:inline">Panier</span>
+                </div>
+                <div class="w-12 md:w-24 h-0.5 bg-secondary"></div>
+
+                <!-- Step 2 -->
+                <div class="flex items-center">
+                    <span
+                        class="step-active w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-medium">2</span>
+                    <span class="ml-2 text-sm font-medium text-secondary hidden sm:inline">Informations</span>
+                </div>
+                <div class="w-12 md:w-24 h-0.5 bg-gray-200"></div>
+
+                <!-- Step 3 -->
+                <div class="flex items-center">
+                    <span
+                        class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm font-medium text-gray-400">3</span>
+                    <span class="ml-2 text-sm text-gray-400 hidden sm:inline">Paiement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+                <!-- Checkout Form -->
+                <div class="lg:col-span-3">
+                    <form id="checkout-form" class="space-y-8">
+
+                        <!-- Contact Information -->
+                        <section class="bg-white p-8 shadow-sm rounded-lg">
+                            <h2 class="font-heading text-2xl text-primary mb-6 flex items-center">
+                                <i class="fa-solid fa-user text-secondary mr-3"></i>
+                                Coordonnées
+                            </h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email
+                                        *</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="votre@email.com">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Téléphone
+                                        *</label>
+                                    <input type="tel" id="phone" name="phone" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="+32 4XX XX XX XX">
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Shipping Address -->
+                        <section class="bg-white p-8 shadow-sm rounded-lg">
+                            <h2 class="font-heading text-2xl text-primary mb-6 flex items-center">
+                                <i class="fa-solid fa-location-dot text-secondary mr-3"></i>
+                                Adresse de livraison
+                            </h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Prénom
+                                        *</label>
+                                    <input type="text" id="firstName" name="firstName" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="Alexandre">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Nom
+                                        *</label>
+                                    <input type="text" id="lastName" name="lastName" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="Dupont">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Adresse
+                                        *</label>
+                                    <input type="text" id="address" name="address" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="123 Rue de l'Élégance">
+                                </div>
+                                <div>
+                                    <label for="postalCode" class="block text-sm font-medium text-gray-700 mb-2">Code
+                                        postal *</label>
+                                    <input type="text" id="postalCode" name="postalCode" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="4000">
+                                </div>
+                                <div>
+                                    <label for="city" class="block text-sm font-medium text-gray-700 mb-2">Ville
+                                        *</label>
+                                    <input type="text" id="city" name="city" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="Liège">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="country" class="block text-sm font-medium text-gray-700 mb-2">Pays
+                                        *</label>
+                                    <select id="country" name="country" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors bg-white">
+                                        <option value="BE" selected>Belgique</option>
+                                        <option value="FR">France</option>
+                                        <option value="LU">Luxembourg</option>
+                                        <option value="NL">Pays-Bas</option>
+                                        <option value="DE">Allemagne</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Shipping Method -->
+                        <section class="bg-white p-8 shadow-sm rounded-lg">
+                            <h2 class="font-heading text-2xl text-primary mb-6 flex items-center">
+                                <i class="fa-solid fa-truck text-secondary mr-3"></i>
+                                Mode de livraison
+                            </h2>
+                            <div class="space-y-4">
+                                <label
+                                    class="flex items-center p-4 border-2 border-secondary rounded-lg cursor-pointer bg-secondary/5">
+                                    <input type="radio" name="shipping" value="standard" checked
+                                        class="w-5 h-5 text-secondary">
+                                    <div class="ml-4 flex-1">
+                                        <span class="font-medium text-primary">Livraison Standard</span>
+                                        <p class="text-sm text-gray-500">3-5 jours ouvrés</p>
+                                    </div>
+                                    <span class="font-medium text-primary">Gratuit</span>
+                                </label>
+                                <label
+                                    class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-secondary transition-colors">
+                                    <input type="radio" name="shipping" value="express" class="w-5 h-5 text-secondary">
+                                    <div class="ml-4 flex-1">
+                                        <span class="font-medium text-primary">Livraison Express</span>
+                                        <p class="text-sm text-gray-500">1-2 jours ouvrés</p>
+                                    </div>
+                                    <span class="font-medium text-primary">15 €</span>
+                                </label>
+                            </div>
+                        </section>
+
+                        <!-- Payment (Simulated) -->
+                        <section class="bg-white p-8 shadow-sm rounded-lg">
+                            <h2 class="font-heading text-2xl text-primary mb-6 flex items-center">
+                                <i class="fa-solid fa-credit-card text-secondary mr-3"></i>
+                                Paiement
+                            </h2>
+
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-info-circle text-yellow-600 mt-0.5 mr-3"></i>
+                                    <div>
+                                        <p class="text-yellow-800 font-medium">Mode démonstration</p>
+                                        <p class="text-yellow-700 text-sm">Ce site est un projet pédagogique. Aucun
+                                            paiement réel ne sera effectué.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-2">Numéro
+                                        de carte</label>
+                                    <input type="text" id="cardNumber" name="cardNumber"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                        placeholder="4242 4242 4242 4242" maxlength="19">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="expiry" class="block text-sm font-medium text-gray-700 mb-2">Date
+                                            d'expiration</label>
+                                        <input type="text" id="expiry" name="expiry"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                            placeholder="MM/AA" maxlength="5">
+                                    </div>
+                                    <div>
+                                        <label for="cvv"
+                                            class="block text-sm font-medium text-gray-700 mb-2">CVV</label>
+                                        <input type="text" id="cvv" name="cvv"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg transition-colors"
+                                            placeholder="123" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-center space-x-4 mt-6 pt-6 border-t border-gray-100">
+                                <i class="fa-brands fa-cc-visa text-3xl text-gray-400"></i>
+                                <i class="fa-brands fa-cc-mastercard text-3xl text-gray-400"></i>
+                                <i class="fa-brands fa-cc-amex text-3xl text-gray-400"></i>
+                            </div>
+                        </section>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-order"
+                            class="w-full bg-secondary hover:bg-secondary/90 text-primary py-5 font-medium text-lg tracking-wide uppercase transition-colors rounded-lg shadow-lg">
+                            <i class="fa-solid fa-lock mr-2"></i>
+                            Confirmer la commande
+                        </button>
+
+                        <p class="text-center text-xs text-gray-500">
+                            En passant commande, vous acceptez nos <a href="mentions-legales.html"
+                                class="text-secondary hover:underline">CGV</a>
+                            et notre <a href="mentions-legales.html" class="text-secondary hover:underline">politique de
+                                confidentialité</a>.
+                        </p>
+
+                    </form>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white p-8 shadow-sm rounded-lg sticky top-8">
+                        <h2 class="font-heading text-2xl text-primary mb-6">Votre commande</h2>
+
+                        <div id="checkout-items"
+                            class="space-y-4 max-h-64 overflow-y-auto border-b border-gray-100 pb-6 mb-6">
+                            <!-- Items will be inserted here -->
+                        </div>
+
+                        <div class="space-y-3 border-b border-gray-100 pb-6 mb-6">
+                            <div class="flex justify-between text-gray-600">
+                                <span>Sous-total</span>
+                                <span id="checkout-subtotal">0 €</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Livraison</span>
+                                <span id="checkout-shipping">Gratuit</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-primary text-lg">Total</span>
+                            <span id="checkout-total" class="font-heading text-3xl text-primary">0 €</span>
+                        </div>
+
+                        <!-- Security Badges -->
+                        <div class="mt-8 pt-6 border-t border-gray-100">
+                            <div class="flex items-center justify-center space-x-6 text-gray-400 text-sm">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-lock text-green-600 mr-2"></i>
+                                    <span>SSL</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-shield-check text-green-600 mr-2"></i>
+                                    <span>Sécurisé</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========== SUCCESS MODAL ========== -->
+    <div id="success-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center transform scale-95 opacity-0 transition-all duration-300"
+                id="success-content">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-check text-green-600 text-4xl"></i>
+                </div>
+                <h2 class="font-heading text-3xl text-primary mb-4">Commande confirmée !</h2>
+                <p class="text-gray-600 mb-6">
+                    Merci pour votre commande. Vous recevrez un email de confirmation sous peu.
+                </p>
+                <p class="text-sm text-gray-500 mb-8">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    Ceci est une démonstration. Aucun paiement n'a été effectué.
+                </p>
+                <a href="index.html"
+                    class="inline-flex items-center bg-primary hover:bg-accent text-white px-8 py-4 font-medium tracking-wide uppercase transition-colors rounded-lg">
+                    <i class="fa-solid fa-home mr-3"></i>
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            HimsaneCart.init();
+            renderCheckoutItems();
+
+            // Shipping method change
+            document.querySelectorAll('input[name="shipping"]').forEach(radio => {
+                radio.addEventListener('change', updateTotals);
+            });
+
+            // Form submission
+            document.getElementById('checkout-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const submitBtn = document.getElementById('submit-order');
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Traitement en cours...';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    // Clear cart
+                    HimsaneCart.clearCart();
+
+                    // Show success modal
+                    const modal = document.getElementById('success-modal');
+                    const content = document.getElementById('success-content');
+                    modal.classList.remove('hidden');
+
+                    setTimeout(() => {
+                        content.classList.remove('scale-95', 'opacity-0');
+                        content.classList.add('scale-100', 'opacity-100');
+                    }, 100);
+                }, 2000);
+            });
+
+            // Format card number
+            document.getElementById('cardNumber').addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\s/g, '').replace(/\D/g, '');
+                value = value.match(/.{1,4}/g)?.join(' ') || value;
+                e.target.value = value;
+            });
+
+            // Format expiry
+            document.getElementById('expiry').addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 2) {
+                    value = value.slice(0, 2) + '/' + value.slice(2);
+                }
+                e.target.value = value;
+            });
+        });
+
+        function renderCheckoutItems() {
+            const container = document.getElementById('checkout-items');
+            const cart = HimsaneCart.getCart();
+
+            if (cart.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-20 object-cover rounded">
+                        <span class="absolute -top-2 -right-2 w-5 h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center">${item.quantity}</span>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-primary text-sm">${item.name}</h3>
+                        <p class="text-xs text-gray-500">${item.size} | ${item.color}</p>
+                    </div>
+                    <span class="font-medium text-primary">${item.price * item.quantity} €</span>
+                </div>
+            `).join('');
+
+            updateTotals();
+        }
+
+        function updateTotals() {
+            const subtotal = HimsaneCart.getTotal();
+            const shippingMethod = document.querySelector('input[name="shipping"]:checked')?.value;
+            const shipping = shippingMethod === 'express' ? 15 : 0;
+            const total = subtotal + shipping;
+
+            document.getElementById('checkout-subtotal').textContent = `${subtotal} €`;
+            document.getElementById('checkout-shipping').textContent = shipping === 0 ? 'Gratuit' : `${shipping} €`;
+            document.getElementById('checkout-total').textContent = `${total} €`;
+        }
+    </script>
+
+</body>
+
+</html>

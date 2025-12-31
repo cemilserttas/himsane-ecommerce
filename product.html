@@ -355,7 +355,8 @@
                     <div class="mb-8">
                         <div class="flex items-center justify-between mb-3">
                             <p class="text-sm font-medium text-primary">Taille</p>
-                            <a href="#" class="text-secondary text-sm hover:underline">Guide des tailles</a>
+                            <a href="guide-tailles.html" class="text-secondary text-sm hover:underline">Guide des
+                                tailles</a>
                         </div>
                         <div class="flex flex-wrap gap-3">
                             <button
@@ -658,7 +659,7 @@
                         <li><a href="index.html#apropos"
                                 class="text-white/60 hover:text-secondary transition-colors text-sm">Notre Maison</a>
                         </li>
-                        <li><a href="#"
+                        <li><a href="apropos.html"
                                 class="text-white/60 hover:text-secondary transition-colors text-sm">Lookbook</a></li>
                     </ul>
                 </div>
@@ -667,13 +668,17 @@
                 <div>
                     <h4 class="font-heading text-lg mb-6">Service Client</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Guide des
+                        <li><a href="guide-tailles.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Guide des
                                 tailles</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Livraison &
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Livraison &
                                 Retours</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">FAQ</a>
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">FAQ</a>
                         </li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Entretien
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Entretien
                                 des pièces</a></li>
                     </ul>
                 </div>
@@ -748,8 +753,57 @@
                     icon.classList.add('fa-minus');
                 }
             }
+
+            // Initialize cart system
+            HimsaneCart.init();
+
+            // Add to cart with full product data
+            const addToCartBtn = document.getElementById('add-to-cart');
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', function () {
+                    // Get selected size
+                    const selectedSize = document.querySelector('.size-btn.bg-primary');
+                    const size = selectedSize ? selectedSize.textContent : '50';
+
+                    // Get selected color
+                    const selectedColor = document.querySelector('.color-btn.ring-secondary');
+                    const colorMap = { 'Noir Intense': 'Noir Intense', 'Bleu Nuit': 'Bleu Nuit' };
+                    const color = selectedColor && selectedColor.classList.contains('bg-[#1B2838]') ? 'Bleu Nuit' : 'Noir Intense';
+
+                    // Get quantity
+                    const quantity = parseInt(document.getElementById('quantity').value) || 1;
+
+                    // Create product object
+                    const product = {
+                        id: 'blazer-signature',
+                        name: 'Le Blazer Signature',
+                        price: 495,
+                        image: 'assets/images/blazer-signature.jpg',
+                        size: size,
+                        color: color,
+                        quantity: quantity
+                    };
+
+                    // Add to cart
+                    HimsaneCart.addItem(product);
+
+                    // Visual feedback
+                    addToCartBtn.innerHTML = '<i class="fa-solid fa-check mr-2"></i>Ajouté au panier';
+                    addToCartBtn.classList.remove('bg-primary');
+                    addToCartBtn.classList.add('bg-green-600');
+
+                    setTimeout(() => {
+                        addToCartBtn.innerHTML = '<i class="fa-solid fa-bag-shopping mr-2"></i>Ajouter au panier';
+                        addToCartBtn.classList.add('bg-primary');
+                        addToCartBtn.classList.remove('bg-green-600');
+                    }, 2000);
+                });
+            }
         });
     </script>
+
+    <!-- Cart System -->
+    <script src="js/cart.js"></script>
 
 </body>
 

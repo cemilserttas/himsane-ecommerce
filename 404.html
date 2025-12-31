@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page non trouvée - HIMSANE">
+
+    <title>Page non trouvée | HIMSANE</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A1A1A',
+                        secondary: '#C9A962',
+                        accent: '#2D2D2D',
+                        cream: '#FAFAFA',
+                        gold: '#C9A962'
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+            color: #1A1A1A;
+        }
+
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- ========== HEADER MINIMAL ========== -->
+    <header class="bg-cream border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center h-20">
+                <a href="index.html" class="flex items-center" aria-label="Retour à l'accueil">
+                    <img src="assets/images/logo.png" alt="HIMSANE Logo" class="h-10 w-auto">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="flex-1 flex items-center justify-center py-20">
+        <div class="text-center px-4">
+
+            <!-- 404 Illustration -->
+            <div class="mb-8">
+                <div class="float-animation inline-block">
+                    <div class="relative">
+                        <span
+                            class="font-heading text-[12rem] md:text-[16rem] text-gray-100 font-bold leading-none">404</span>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-bag-shopping text-6xl md:text-8xl text-secondary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message -->
+            <h1 class="font-heading text-3xl md:text-4xl text-primary mb-4">Page introuvable</h1>
+            <p class="text-gray-600 max-w-md mx-auto mb-8">
+                Oups ! Il semble que cette page ait pris la tangente. Peut-être cherchait-elle une coupe plus élégante ?
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="index.html"
+                    class="inline-flex items-center bg-primary hover:bg-accent text-white px-8 py-4 font-medium tracking-wide uppercase transition-colors">
+                    <i class="fa-solid fa-home mr-3"></i>
+                    Retour à l'accueil
+                </a>
+                <a href="index.html#produits"
+                    class="inline-flex items-center border-2 border-primary hover:bg-primary hover:text-white text-primary px-8 py-4 font-medium tracking-wide uppercase transition-colors">
+                    <i class="fa-solid fa-shirt mr-3"></i>
+                    Voir la collection
+                </a>
+            </div>
+
+            <!-- Help Links -->
+            <div class="mt-12 text-sm text-gray-500">
+                <p class="mb-4">Vous avez peut-être besoin d'aide ?</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="faq.html" class="text-secondary hover:underline">
+                        <i class="fa-solid fa-circle-question mr-1"></i> FAQ
+                    </a>
+                    <a href="mailto:contact@himsane.com" class="text-secondary hover:underline">
+                        <i class="fa-solid fa-envelope mr-1"></i> Contact
+                    </a>
+                    <a href="guide-tailles.html" class="text-secondary hover:underline">
+                        <i class="fa-solid fa-ruler mr-1"></i> Guide des tailles
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========== FOOTER MINIMAL ========== -->
+    <footer class="bg-primary py-6">
+        <div class="text-center text-white/40 text-xs">
+            <p>© 2024 HIMSANE. Réalisé par <span class="text-secondary">Cemil SERTTAS</span> & Bedi Tieko</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

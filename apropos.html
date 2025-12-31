@@ -518,7 +518,7 @@
                         <li><a href="index.html#produits"
                                 class="text-white/60 hover:text-secondary transition-colors text-sm">Collection</a></li>
                         <li><a href="apropos.html" class="text-secondary text-sm">Notre Maison</a></li>
-                        <li><a href="#"
+                        <li><a href="apropos.html"
                                 class="text-white/60 hover:text-secondary transition-colors text-sm">Lookbook</a></li>
                     </ul>
                 </div>
@@ -527,13 +527,17 @@
                 <div>
                     <h4 class="font-heading text-lg mb-6">Service Client</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Guide des
+                        <li><a href="guide-tailles.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Guide des
                                 tailles</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Livraison &
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Livraison &
                                 Retours</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">FAQ</a>
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">FAQ</a>
                         </li>
-                        <li><a href="#" class="text-white/60 hover:text-secondary transition-colors text-sm">Entretien
+                        <li><a href="faq.html"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Entretien
                                 des pièces</a></li>
                     </ul>
                 </div>
@@ -578,7 +582,13 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            HimsaneCart.init();
+        });
+    </script>
 
 </body>
 
