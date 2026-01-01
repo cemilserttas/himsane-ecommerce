@@ -271,7 +271,7 @@
                 <div class="space-y-4">
                     <!-- Main Image -->
                     <div class="product-main-image relative aspect-[3/4] bg-white overflow-hidden">
-                        <img id="main-product-image" src="assets/images/blazer-signature.jpg"
+                        <img id="main-product-image" src="assets/images/blazer-view1.jpg"
                             alt="Le Blazer Signature - Vue principale" class="w-full h-full object-cover">
                         <span
                             class="absolute top-4 left-4 bg-primary text-white px-4 py-1 text-xs font-medium uppercase tracking-wider">
@@ -282,26 +282,26 @@
                     <!-- Thumbnails -->
                     <div class="grid grid-cols-4 gap-3">
                         <button class="product-thumbnail aspect-square bg-white overflow-hidden ring-2 ring-secondary"
-                            data-image="assets/images/blazer-signature.jpg">
-                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 1"
+                            data-image="assets/images/blazer-view1.jpg">
+                            <img src="assets/images/blazer-view1.jpg" alt="Blazer vue 1"
                                 class="w-full h-full object-cover">
                         </button>
                         <button
                             class="product-thumbnail aspect-square bg-white overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
-                            data-image="assets/images/blazer-signature.jpg">
-                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 2"
+                            data-image="assets/images/blazer-view2.jpg">
+                            <img src="assets/images/blazer-view2.jpg" alt="Blazer vue 2"
                                 class="w-full h-full object-cover">
                         </button>
                         <button
                             class="product-thumbnail aspect-square bg-white overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
-                            data-image="assets/images/blazer-signature.jpg">
-                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 3"
+                            data-image="assets/images/blazer-view3.jpg">
+                            <img src="assets/images/blazer-view3.jpg" alt="Blazer vue 3"
                                 class="w-full h-full object-cover">
                         </button>
                         <button
                             class="product-thumbnail aspect-square bg-white overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
-                            data-image="assets/images/blazer-signature.jpg">
-                            <img src="assets/images/blazer-signature.jpg" alt="Blazer vue 4"
+                            data-image="assets/images/blazer-view4.png">
+                            <img src="assets/images/blazer-view4.png" alt="Blazer vue 4"
                                 class="w-full h-full object-cover">
                         </button>
                     </div>
@@ -345,11 +345,11 @@
                         <div class="flex space-x-3">
                             <button
                                 class="color-btn w-10 h-10 rounded-full bg-[#1A1A1A] ring-2 ring-offset-2 ring-secondary"
-                                data-color="Noir Intense" data-image="assets/images/blazer-signature.jpg"
+                                data-color="Noir Intense" data-image="assets/images/blazer-view1.jpg"
                                 aria-label="Noir Intense"></button>
                             <button
                                 class="color-btn w-10 h-10 rounded-full bg-[#1B2838] hover:ring-2 hover:ring-offset-2 hover:ring-gray-300 transition-all"
-                                data-color="Bleu Nuit" data-image="assets/images/blazer-signature.jpg"
+                                data-color="Bleu Nuit" data-image="assets/images/blazer-bleu-view1.jpg"
                                 aria-label="Bleu Nuit"></button>
                         </div>
                     </div>
@@ -851,7 +851,7 @@
                 });
             }
 
-            // Color selection - update text and ring
+            // Color selection - update text, ring, and all images
             document.querySelectorAll('.color-btn').forEach(btn => {
                 btn.addEventListener('click', function () {
                     // Remove ring from all color buttons
@@ -865,6 +865,65 @@
                     if (colorText && this.dataset.color) {
                         colorText.textContent = this.dataset.color;
                     }
+
+                    // Update all images based on selected color
+                    const selectedColor = this.dataset.color;
+                    const mainImage = document.getElementById('main-product-image');
+                    const thumbnails = document.querySelectorAll('.product-thumbnail');
+
+                    if (selectedColor === 'Bleu Nuit') {
+                        // Update to blue blazer images
+                        if (mainImage) {
+                            mainImage.src = 'assets/images/blazer-bleu-view1.jpg';
+                        }
+                        thumbnails.forEach((thumb, index) => {
+                            const img = thumb.querySelector('img');
+                            if (index === 0) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-bleu-view1.jpg');
+                                if (img) img.src = 'assets/images/blazer-bleu-view1.jpg';
+                            } else if (index === 1) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-bleu-view2.jpg');
+                                if (img) img.src = 'assets/images/blazer-bleu-view2.jpg';
+                            } else if (index === 2) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-bleu-view3.jpg');
+                                if (img) img.src = 'assets/images/blazer-bleu-view3.jpg';
+                            } else if (index === 3) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-bleu-view4.jpg');
+                                if (img) img.src = 'assets/images/blazer-bleu-view4.jpg';
+                            }
+                        });
+                    } else if (selectedColor === 'Noir Intense') {
+                        // Update to black blazer images
+                        if (mainImage) {
+                            mainImage.src = 'assets/images/blazer-view1.jpg';
+                        }
+                        thumbnails.forEach((thumb, index) => {
+                            const img = thumb.querySelector('img');
+                            if (index === 0) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-view1.jpg');
+                                if (img) img.src = 'assets/images/blazer-view1.jpg';
+                            } else if (index === 1) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-view2.jpg');
+                                if (img) img.src = 'assets/images/blazer-view2.jpg';
+                            } else if (index === 2) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-view3.jpg');
+                                if (img) img.src = 'assets/images/blazer-view3.jpg';
+                            } else if (index === 3) {
+                                thumb.setAttribute('data-image', 'assets/images/blazer-view4.png');
+                                if (img) img.src = 'assets/images/blazer-view4.png';
+                            }
+                        });
+                    }
+
+                    // Reset thumbnail selection
+                    thumbnails.forEach((thumb, index) => {
+                        thumb.classList.remove('ring-2', 'ring-secondary');
+                        thumb.classList.add('opacity-60');
+                        if (index === 0) {
+                            thumb.classList.add('ring-2', 'ring-secondary');
+                            thumb.classList.remove('opacity-60');
+                        }
+                    });
                 });
             });
 
